@@ -1,6 +1,6 @@
 import java.util.UUID;
 
-public class ProductFactory {
+public class EntityFactory {
     public static Product create(String name) {
         return new Product(generateId(), name);
     }
