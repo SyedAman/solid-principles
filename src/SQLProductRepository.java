@@ -1,7 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class SQLProductRepository {
+
+public class SQLProductRepository implements ProductRepository {
     private Map<String, Entity> entities = new HashMap<>();
 
     String create(String name) {
@@ -22,13 +22,24 @@ public class SQLProductRepository {
         entities.remove(id);
     }
 
-    String[] getAllIds() {
-        String[] entityIds = new String[entities.size()];
-        int i = 0;
+    List<String> getAllIds() {
+        List<String> ids = new ArrayList<>();
         for (Entity entity : entities.values()) {
-            entityIds[i] = entity.getId();
-            i++;
+            ids.add(entity.getId());
         }
-        return entityIds;
+        return ids;
+    }
+
+    @Override
+    public List<String> getAllProductNames() {
+        return Arrays.asList("soap", "toothpaste", "shampoo");
+
+        /**
+         * @TODO: implement this method
+         * List<String> productNames = new ArrayList<>();
+        for (Entity entity : entities.values()) {
+            productNames.add(entity.getName());
+        }
+        return productNames;*/
     }
 }
