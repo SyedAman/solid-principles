@@ -7,7 +7,7 @@ public class ProductCatalog {
         }
     }
     public void listAllProducts() {
-        ProductRepository productRepository = ProductFactory.create();
+        ProductRepository productRepository = ProductRepositoryFactory.create();
         List<String> allProductNames = productRepository.getAllProductNames();
 
         displayProductNames(allProductNames);
