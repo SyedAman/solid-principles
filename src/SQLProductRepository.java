@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class SQLEntityRepository {
+public class SQLProductRepository {
     private Map<String, Entity> entities = new HashMap<>();
 
     String create(String name) {
