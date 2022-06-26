@@ -1,6 +1,9 @@
 public class App {
     public static void main(String[] args) {
-        ProductCatalog catalog = new ProductCatalog();
-        catalog.listAllProducts();
+        Catalog productCatalog = ProductCatalogFactory.create();
+        productCatalog.listAllItems();
+
+        Catalog couponCatalog = CouponCatalogFactory.create();
+        couponCatalog.listAllItems();
     }
 }
